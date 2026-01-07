@@ -20,6 +20,12 @@
       "versionNumber": "1.0.0.0"
     },
     {
+      "path": "./src/lwc-library",
+      "package": "lwc-library",
+      "versionName": "Version 1.0.0",
+      "versionNumber": "1.0.0.0"
+    },
+    {
       "path": "./src-ui",
       "package": "src-ui",
       "versionNumber": "1.1.0.0",

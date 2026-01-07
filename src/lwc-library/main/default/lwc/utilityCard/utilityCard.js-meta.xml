@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Utility Card</masterLabel>
+    <description>A reusable utility card component for displaying content in a card layout</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property name="title" type="String" label="Card Title" description="The title to display in the card header"/>
+            <property name="iconName" type="String" label="Icon Name" description="The Lightning Design System name of the icon"/>
+            <property name="variant" type="String" default="base" label="Variant" description="The card variant (base, narrow)"/>
+            <property name="showActions" type="Boolean" default="false" label="Show Actions" description="If true, displays the actions slot"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
