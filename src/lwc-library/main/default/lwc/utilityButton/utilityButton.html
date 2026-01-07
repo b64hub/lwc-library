@@ -1,0 +1,24 @@
+<template>
+    <button
+        class={computedClass}
+        onclick={handleClick}
+        disabled={disabled}
+        title={title}
+    >
+        <template if:true={showIconLeft}>
+            <lightning-icon
+                icon-name={iconName}
+                size="small"
+                alternative-text={label}
+            ></lightning-icon>
+        </template>
+        <span class="slds-m-horizontal_xx-small">{label}</span>
+        <template if:true={showIconRight}>
+            <lightning-icon
+                icon-name={iconName}
+                size="small"
+                alternative-text={label}
+            ></lightning-icon>
+        </template>
+    </button>
+</template>
