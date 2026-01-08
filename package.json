@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "LWC Library",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint **/{aura,lwc}/**",
     "test": "npm run test:unit",
