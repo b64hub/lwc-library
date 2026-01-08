@@ -3,11 +3,32 @@
   "overrides": [
     {
       "files": "**/lwc/**/*.html",
-      "options": { "parser": "lwc" }
+      "options": {
+        "parser": "lwc"
+      }
     },
     {
-      "files": "*.{cmp,page,component}",
-      "options": { "parser": "html" }
+      "files": "**/*.{cmp,page,component}",
+      "options": {
+        "parser": "html"
+      }
+    },
+    {
+      "files": "**/*.xml",
+      "options": {
+        "plugins": [
+          "@prettier/plugin-xml"
+        ]
+      }
+    },
+    {
+      "files": "**/*.{cls,trigger}",
+      "options": {
+        "tabWidth": 4,
+        "plugins": [
+          "prettier-plugin-apex"
+        ]
+      }
     }
   ]
 }

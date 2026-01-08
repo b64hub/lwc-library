@@ -1,0 +1,176 @@
+.sheet-container {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 1rem;
+}
+
+.calculation-sheet {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #d1d5db;
+}
+
+/* Header styling */
+.column-header,
+.label-header,
+.actions-header {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #374151;
+  min-width: 3rem;
+}
+
+.label-header {
+  min-width: 10rem;
+  text-align: left;
+  padding-left: 0.75rem;
+}
+
+.actions-header {
+  width: 2.5rem;
+}
+
+/* Label column styling */
+.label-cell {
+  background: #fafafa;
+  border: 1px solid #d1d5db;
+  padding: 0;
+  min-width: 10rem;
+}
+
+.label-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  text-align: left;
+  background: transparent;
+  box-sizing: border-box;
+  font-weight: 500;
+  color: #374151;
+}
+
+.label-input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.label-input:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+  background: #eff6ff;
+}
+
+/* Cell styling */
+.cell {
+  border: 1px solid #d1d5db;
+  padding: 0;
+  position: relative;
+}
+
+.cell-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  text-align: right;
+  background: transparent;
+  box-sizing: border-box;
+  -moz-appearance: textfield;
+}
+
+.cell-input::-webkit-outer-spin-button,
+.cell-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cell-input:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+  background: #eff6ff;
+}
+
+/* Row actions */
+.row-actions {
+  border: 1px solid #d1d5db;
+  padding: 0.25rem;
+  text-align: center;
+  width: 2.5rem;
+}
+
+.remove-row-btn {
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.15s ease;
+}
+
+.remove-row-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Sum row styling */
+.sum-row {
+  background: #f0fdf4;
+  font-weight: 600;
+}
+
+.sum-label {
+  background: #dcfce7;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem;
+  text-align: center;
+  color: #166534;
+}
+
+.sum-cell {
+  border: 1px solid #d1d5db;
+  padding: 0.5rem;
+  text-align: right;
+  color: #166534;
+}
+
+.total-cell {
+  background: #bbf7d0;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem;
+  text-align: center;
+  color: #166534;
+  font-weight: 700;
+}
+
+/* Add row button */
+.sheet-actions {
+  margin-top: 0.75rem;
+}
+
+.add-row-btn {
+  background: #f3f4f6;
+  border: 1px dashed #9ca3af;
+  color: #6b7280;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.add-row-btn:hover {
+  background: #e5e7eb;
+  border-color: #6b7280;
+  color: #374151;
+}
