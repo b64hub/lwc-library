@@ -3,5 +3,11 @@
     "**/node_modules": true,
     "**/bower_components": true,
     "**/.sfdx": true
-  }
+  },
+  "xml.preferences.showSchemaDocumentationType": "none",
+  "salesforcedx-vscode-core.retrieve-test-code-coverage": true,
+  "files.eol": "\n",
+  "salesforce.einsteinForDevelopers.enable": false,
+  "salesforcedx-vscode-core.telemetry.enabled": true,
+  "salesforcedx-vscode-lwc.preview.typeScriptSupport": true
 }

@@ -1,0 +1,72 @@
+<template>
+  <div class="sheet-container">
+    <table class="calculation-sheet">
+      <!-- Header row with column labels -->
+      <thead>
+        <tr>
+          <th class="label-header">Label</th>
+          <template for:each={columnHeaders} for:item="header">
+            <th key={header.key} class="column-header">{header.label}</th>
+          </template>
+          <th class="actions-header"></th>
+        </tr>
+      </thead>
+
+      <!-- Data rows -->
+      <tbody>
+        <template for:each={rows} for:item="row">
+          <tr key={row.id} class="data-row">
+            <td class="label-cell">
+              <input
+                type="text"
+                class="label-input"
+                data-row-index={row.index}
+                value={row.label}
+                onchange={handleLabelChange}
+                placeholder="Row label..."
+              />
+            </td>
+            <template for:each={row.cells} for:item="cell">
+              <td key={cell.id} class="cell">
+                <input
+                  type="number"
+                  class="cell-input"
+                  data-row-index={row.index}
+                  data-col-index={cell.colIndex}
+                  value={cell.value}
+                  onchange={handleCellChange}
+                />
+              </td>
+            </template>
+            <td class="row-actions">
+              <button
+                class="remove-row-btn"
+                data-row-index={row.index}
+                onclick={handleRemoveRow}
+                title="Remove row"
+              >
+                ✕
+              </button>
+            </td>
+          </tr>
+        </template>
+      </tbody>
+
+      <!-- Sum row -->
+      <tfoot>
+        <tr class="sum-row">
+          <td class="sum-label">Σ Total</td>
+          <template for:each={columnSums} for:item="colSum">
+            <td key={colSum.key} class="sum-cell">{colSum.sum}</td>
+          </template>
+          <td class="total-cell">{grandTotal}</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- Add row button -->
+    <div class="sheet-actions">
+      <button class="add-row-btn" onclick={handleAddRow}>+ Add Row</button>
+    </div>
+  </div>
+</template>

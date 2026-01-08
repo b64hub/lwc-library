@@ -1,0 +1,23 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": false,
+    "paths": {
+      "c/*": ["./*"]
+    },
+    "types": ["@salesforce/ts-types"]
+  },
+  "include": [
+    "**/*.ts",
+    "../../.sfdx/typings/lwc/**/*.d.ts",
+    "../../types/**/*.d.ts",
+    "**/*.d.ts"
+  ],
+  "exclude": ["node_modules", "scripts/lib", "**/__tests__/**"],
+  "extends": "../../../../.sfdx/tsconfig.sfdx.json"
+}
