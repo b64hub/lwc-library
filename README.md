@@ -1,48 +1,75 @@
-This repository is an opinionated verison of the dx@scale template. It's to be used in github and is shipped with a devcontainer installed with all the dependencies.
+# LWC Library
 
-The rest of this readme comes from the dx@scale template.
+A Lightning Web Components library for Salesforce development using the scratch org model.
+
+## Prerequisites
+
+- [Salesforce CLI (sf)](https://developer.salesforce.com/tools/salesforcecli)
+- [sfp CLI](https://docs.flxbl.io/sfp)
+- Node.js and npm
+- Access to a Salesforce Dev Hub org
+
+## Quick Start
+
+1. **Install Dependencies**
+
+   ```bash
+   npm install
+   ```
+
+2. **Authenticate to Dev Hub**
+
+   Run this once to connect to your Dev Hub (typically your Production org):
+
+   ```bash
+   sf org login device --setalias devhub
+   ```
+
+3. **Create a Scratch Org**
+
+   Choose one of the following options:
+
+   **Option A: Fetch from Pool (Recommended)**
+
+   ```bash
+   sfp pool fetch -t dev -a <your-alias>
+   ```
+
+   **Option B: Create New Scratch Org**
+
+   ```bash
+   sf org create --definitionfile config/project-scratch-def.json --setalias <your-alias> --targetdevhubusername devhub
+   sfp dependency install -o <your-alias> -v devhub
+   sf deploy metadata -o <your-alias>
+   ```
 
 ## Development
 
-This project is using a scratch org development model. In order to contribute you will need to create a scratch org with and push all metadata configuration and code.
+### Available Scripts
 
-## Dependencies
+- `npm run lint` - Run ESLint on LWC components
+- `npm run test` - Run unit tests
+- `npm run test:unit:watch` - Run tests in watch mode
+- `npm run test:unit:coverage` - Generate test coverage report
+- `npm run prettier` - Format code
+- `npm run compile` - Compile TypeScript
 
-- sfp cli
-- sf cli
+### Project Structure
 
-`npm i @salesforce/cli @flxblio/sfp`
+```
+src/
+  lwc/          - Lightning Web Components
+config/         - Scratch org configuration
+scripts/        - Helper scripts
+```
 
-## Scratch Org Setup
+### VS Code Tasks
 
-For this you will need to be authenticated to a Dev Hub org - this is typically the Production Org
+Use these tasks from the Command Palette (Ctrl+Shift+P):
 
-- Authenticate to the DevHub (Production Org)
+- **Fetch new Scratch Org 🚀** - Create a new scratch org
+- **Pull your changes from the Scratch Org ⬅️** - Sync changes from scratch org
 
-  You need to perform this step only once
+## License
 
-  ```
-   sf org login device --setalias devhub
-  ```
-
-- Clone the repository
-
-- There are two options: fetch a scratch org with package dependencies pre-installed, or create an empty scratch org
-
-  - Option A: Fetch a scratch org from the pool [Preferred]
-
-    ```
-
-    sfp pool fetch -t dev -a  <alias>
-    ```
-
-  - Option B: Create a scratch org and install all dependencies
-
-    ```
-    sf org create --definitionfile config/project-scratch-def.json --setalias <myScratchOrg> --targetdevhubusername <devhub-alias>
-    sfp dependency install -o <myScratchOrg> -v <devhub-alias>
-
-    Push the source code
-    sf deploy metadata -o <myScratchOrg>
-
-    ```
+MIT License - see [LICENSE](LICENSE) file for details.

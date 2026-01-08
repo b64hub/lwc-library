@@ -1,0 +1,13 @@
+{
+  "servers": {
+    "Salesforce DX": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@salesforce/mcp", "--orgs", "DEFAULT_TARGET_ORG", "--toolsets", "all"]
+    },
+    "Figma Dev Mode MCP": {
+       "type": "http",
+       "url": "http://host.docker.internal:3845/mcp" // http://127.0.0.1:3845/mcp depending on you development environment
+     }
+  }
+}
