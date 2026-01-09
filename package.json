@@ -41,6 +41,6 @@
     "eslint-plugin-import": "^2.32.0"
   },
   "dependencies": {
-    "@flxbl-io/sfp": "^39.1.0"
+    "@flxbl-io/sfp": "^39.8.0"
   }
 }
